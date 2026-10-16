@@ -8,7 +8,7 @@
   <meta property="og:title" content="Same Sky — our weather, side by side">
   <meta property="og:description" content="Karachi and Bucharest under one sky — live weather for Ammar and Mena.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#faf7f5">
+  <meta name="theme-color" content="#090b20">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -16,23 +16,25 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body data-page="weather">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
   <header class="site-header">
-    <div class="container">
-      <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="https://menaammarpro.github.io/">All projects</a>
-        <a href="https://menaammarpro.github.io/love-timezone/">Same Sky (clocks)</a>
-        <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
-      </nav>
-    </div>
+    <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://menaammarpro.github.io/">All projects</a>
+      <a href="https://menaammarpro.github.io/love-timezone/">Same Sky (clocks)</a>
+      <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
       <p class="eyebrow">Karachi &rarr; Bucharest</p>
-      <h1>Same sky</h1>
+      <h1>Same <span>sky</span></h1>
       <p class="subtitle">Two cities, one weather report — and always the same sun.</p>
-      <button id="unit-toggle" class="btn btn-ghost unit-toggle" type="button">&deg;C</button>
+      <button id="unit-toggle" class="button button-ghost unit-toggle" type="button">&deg;C</button>
     </section>
 
     <p id="diff-line" class="diff-line">&nbsp;</p>
@@ -79,10 +81,8 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
-      <p class="footer-note">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
-    </div>
+    <p>Made with love, just for you <span>&#9829;</span></p>
+    <p class="footer-small">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
   </footer>
 
   <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>&#8679;</button>
