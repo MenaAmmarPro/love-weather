@@ -1,0 +1,127 @@
+/* love-weather — page styles on top of the shared love theme */
+
+main.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-bottom: 3rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 0;
+  position: relative;
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--muted, #8a847e);
+  margin: 0 0 0.4rem;
+}
+
+.hero h1 { margin: 0 0 0.4rem; }
+.subtitle { margin: 0; color: var(--muted, #8a847e); }
+
+.unit-toggle {
+  position: absolute;
+  right: 0;
+  top: 2.1rem;
+  font-weight: 700;
+}
+
+.diff-line {
+  text-align: center;
+  font-size: 1.05rem;
+  min-height: 1.4em;
+  margin: 0;
+}
+
+.load-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted, #8a847e);
+  min-height: 1.2em;
+  margin: 0;
+}
+
+/* ---------- city cards ---------- */
+
+.city-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.city-card {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.city-card:hover { transform: translateY(-2px); }
+
+.city-card h2 { margin: 0; font-size: 1.2rem; }
+
+.city-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted, #8a847e);
+}
+
+.now {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.now-icon { font-size: 2.6rem; line-height: 1; }
+
+.now-temp { font-size: 2.4rem; font-weight: 700; }
+
+.now-desc { margin: 0.2rem 0 0; font-size: 0.95rem; }
+
+.now-extra { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted, #8a847e); }
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--line, #ece6e0);
+  padding-top: 0.7rem;
+}
+
+.day {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.day .day-name { font-weight: 700; display: block; }
+.day .day-icon { font-size: 1.2rem; display: block; margin: 0.15rem 0; }
+.day .day-temp { color: var(--muted, #8a847e); }
+
+.fallback-note {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  color: #a08a5c;
+  text-align: center;
+  margin: 0.3rem 0 0;
+}
+
+/* ---------- info ---------- */
+
+.info-panel {
+  max-width: 36rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.info-panel h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.info-panel p { margin: 0.3rem 0; color: var(--muted, #8a847e); font-size: 0.9rem; }
+
+@media (max-width: 560px) {
+  .city-grid { grid-template-columns: 1fr; }
+  .unit-toggle { position: static; margin-top: 0.8rem; }
+}
