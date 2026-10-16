@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Same Sky — our weather, side by side</title>
+  <meta name="description" content="Karachi and Bucharest under one sky — live weather for Ammar and Mena.">
+  <meta property="og:title" content="Same Sky — our weather, side by side">
+  <meta property="og:description" content="Karachi and Bucharest under one sky — live weather for Ammar and Mena.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#faf7f5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="weather">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="https://menaammarpro.github.io/">All projects</a>
+        <a href="https://menaammarpro.github.io/love-timezone/">Same Sky (clocks)</a>
+        <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Karachi &rarr; Bucharest</p>
+      <h1>Same sky</h1>
+      <p class="subtitle">Two cities, one weather report — and always the same sun.</p>
+      <button id="unit-toggle" class="btn btn-ghost unit-toggle" type="button">&deg;C</button>
+    </section>
+
+    <p id="diff-line" class="diff-line">&nbsp;</p>
+    <p id="load-note" class="load-note">looking out both windows&hellip;</p>
+
+    <section class="city-grid">
+      <article class="panel city-card" id="card-karachi">
+        <header>
+          <h2>Karachi</h2>
+          <p class="city-meta"><span id="time-karachi">--:--</span> &middot; Pakistan</p>
+        </header>
+        <div class="now">
+          <span id="icon-karachi" class="now-icon" aria-hidden="true">&#9728;</span>
+          <span id="temp-karachi" class="now-temp">--&deg;</span>
+        </div>
+        <p id="desc-karachi" class="now-desc">&nbsp;</p>
+        <p id="extra-karachi" class="now-extra">&nbsp;</p>
+        <div id="forecast-karachi" class="forecast"></div>
+      </article>
+
+      <article class="panel city-card" id="card-bucharest">
+        <header>
+          <h2>Bucharest</h2>
+          <p class="city-meta"><span id="time-bucharest">--:--</span> &middot; Romania</p>
+        </header>
+        <div class="now">
+          <span id="icon-bucharest" class="now-icon" aria-hidden="true">&#9728;</span>
+          <span id="temp-bucharest" class="now-temp">--&deg;</span>
+        </div>
+        <p id="desc-bucharest" class="now-desc">&nbsp;</p>
+        <p id="extra-bucharest" class="now-extra">&nbsp;</p>
+        <div id="forecast-bucharest" class="forecast"></div>
+      </article>
+    </section>
+
+    <section class="panel info-panel">
+      <h2>Where this comes from</h2>
+      <p>Live numbers from the free, key-less
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+        service. If the sky can't be reached (offline, cloudy servers), each
+        card falls back to what this month usually feels like in that city.</p>
+      <p>Refreshes itself every ten minutes &mdash; or whenever you tap a city card.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
+      <p class="footer-note">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>&#8679;</button>
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
