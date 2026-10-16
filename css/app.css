@@ -1,6 +1,8 @@
 /* love-weather — page styles on top of the shared love theme */
 
-main.container {
+main {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -8,26 +10,23 @@ main.container {
 }
 
 .hero {
+  min-height: auto;
+  padding: 2.4rem 1rem 0;
   text-align: center;
-  padding: 2rem 1rem 0;
   position: relative;
 }
 
 .eyebrow {
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--muted, #8a847e);
-  margin: 0 0 0.4rem;
+  color: var(--pink);
 }
 
-.hero h1 { margin: 0 0 0.4rem; }
-.subtitle { margin: 0; color: var(--muted, #8a847e); }
+.hero h1 { margin: 0.2rem 0 0.4rem; }
+.subtitle { margin: 0; color: var(--muted); }
 
 .unit-toggle {
   position: absolute;
   right: 0;
-  top: 2.1rem;
+  top: 2.4rem;
   font-weight: 700;
 }
 
@@ -36,17 +35,26 @@ main.container {
   font-size: 1.05rem;
   min-height: 1.4em;
   margin: 0;
+  color: var(--text);
 }
 
 .load-note {
   text-align: center;
   font-size: 0.85rem;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   min-height: 1.2em;
   margin: 0;
 }
 
-/* ---------- city cards ---------- */
+/* ---------- cards ---------- */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.2rem 1.3rem;
+  box-shadow: var(--shadow);
+}
 
 .city-grid {
   display: grid;
@@ -56,17 +64,20 @@ main.container {
 
 .city-card {
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
-.city-card:hover { transform: translateY(-2px); }
+.city-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--pink);
+}
 
-.city-card h2 { margin: 0; font-size: 1.2rem; }
+.city-card h2 { margin: 0; font-size: 1.2rem; color: var(--text); }
 
 .city-meta {
   margin: 0.15rem 0 0;
   font-size: 0.8rem;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
 }
 
 .now {
@@ -78,18 +89,18 @@ main.container {
 
 .now-icon { font-size: 2.6rem; line-height: 1; }
 
-.now-temp { font-size: 2.4rem; font-weight: 700; }
+.now-temp { font-size: 2.4rem; font-weight: 700; color: var(--text); }
 
 .now-desc { margin: 0.2rem 0 0; font-size: 0.95rem; }
 
-.now-extra { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted, #8a847e); }
+.now-extra { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted); }
 
 .forecast {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin-top: 0.9rem;
-  border-top: 1px solid var(--line, #ece6e0);
+  border-top: 1px solid var(--line);
   padding-top: 0.7rem;
 }
 
@@ -100,12 +111,12 @@ main.container {
 
 .day .day-name { font-weight: 700; display: block; }
 .day .day-icon { font-size: 1.2rem; display: block; margin: 0.15rem 0; }
-.day .day-temp { color: var(--muted, #8a847e); }
+.day .day-temp { color: var(--muted); }
 
 .fallback-note {
   grid-column: 1 / -1;
   font-size: 0.78rem;
-  color: #a08a5c;
+  color: #ffd166;
   text-align: center;
   margin: 0.3rem 0 0;
 }
@@ -113,13 +124,14 @@ main.container {
 /* ---------- info ---------- */
 
 .info-panel {
-  max-width: 36rem;
+  max-width: 40rem;
   margin: 0 auto;
   width: 100%;
 }
 
 .info-panel h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
-.info-panel p { margin: 0.3rem 0; color: var(--muted, #8a847e); font-size: 0.9rem; }
+.info-panel p { margin: 0.3rem 0; color: var(--muted); font-size: 0.9rem; }
+.info-panel a { color: var(--pink); }
 
 @media (max-width: 560px) {
   .city-grid { grid-template-columns: 1fr; }
