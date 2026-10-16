@@ -1,0 +1,14 @@
+{
+  "name": "Same Sky — our weather",
+  "short_name": "Same Sky",
+  "description": "Karachi and Bucharest under one sky — live weather for Ammar and Mena.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#faf7f5",
+  "theme_color": "#faf7f5",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/og-image.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
